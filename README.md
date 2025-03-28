@@ -1,6 +1,6 @@
-# scripted-renderer-dev
+# FORG3D Rendering Tool
 
-This project is a **3D rendering tool** that takes any 2 Blender objects and renders them on a plane with customizable orientations, positions, distances, and camera angles.
+**FORG3D** _(Flexible Object Rendering for Generation of 3D Vision-Language Spatial Reasoning Datasets)_ is a **3D rendering tool** that takes any 2 Blender objects and renders them on a plane with customizable orientations, positions, distances, and camera angles.
 
 ## Setup
 
@@ -32,6 +32,17 @@ Download and install **[Blender 4.3](https://www.blender.org/download/)**.
    echo "/path/to/scripted-renderer-dev/src" > /path/to/blender/site-packages/scripted-renderer-dev.pth
    ```
     - _Note: if you encounter errors on Windows, ensure the file encoding is **UTF-8 with BOM**._
+  
+### Step 4: Load Preset Objects or Add Your Own
+
+- We have created 21 preset objects available in [this repository](https://github.com/compling-wat/FORG3D-object-data). You can load them into your `data` directory by:
+```bash
+cd data
+./load_objects.sh
+```
+
+- Alternatively, you can add your own objects by placing `.blend` files inside the `data/objaverse/shapes` folder and specifying their properties in `properties.json`.
+
 
 ## Usage
 
@@ -101,6 +112,4 @@ _The goal is to enable comparisons between a fine-tuned spatial reasoning modelâ
 
 ## Configuration
 
-The tool's settings, such as **output directories, image resolution, and other scene configurations**, can be customized in `config.json` under the `src` directory.
-
-You can also add your own objects by placing `.blend` files inside the `data` folder and specifying their properties in `properties.json`.
+The tool's general settings, such as **output directories, image resolution, and other scene configurations**, can be customized in `config.json` under the `src` directory.
