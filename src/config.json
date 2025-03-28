@@ -1,0 +1,63 @@
+{
+  "intrinsic_directions": {
+    "left": {
+      "behind": "right",
+      "front": "left",
+      "left": "front",
+      "right": "behind"
+    },
+    "right": {
+      "behind": "left",
+      "front": "right",
+      "left": "behind",
+      "right": "front"
+    },
+    "front": {
+      "front": "front",
+      "behind": "behind",
+      "left": "right",
+      "right": "left"
+    },
+    "behind": {
+      "behind": "front",
+      "front": "behind",
+      "left": "left",
+      "right": "right"
+    }
+  },
+  "caption_templates": {
+    "3d_translation": {
+      "left": "The {} is to the left of the {}.",
+      "right": "The {} is to the right of the {}.",
+      "behind": "The {} is in front of the {}.",
+      "front": "The {} is behind the {}."
+    },
+    "3d_reflection": {
+      "left": "The {} is to the left of the {}.",
+      "right": "The {} is to the right of the {}.",
+      "behind": "The {} is behind the {}.",
+      "front": "The {} is in front of the {}."
+    },
+    "3d_intrinsic": {
+      "left": "From the {}'s perspective, the {} is to the left of it.",
+      "right": "From the {}'s perspective, the {} is to the right of it.",
+      "behind": "From the {}'s perspective, the {} is behind it.",
+      "front": "From the {}'s perspective, the {} is in front of it."
+    }
+  },
+  "properties_json": "../data/objaverse/properties.json",
+  "base_scene_blendfile": "../data/objaverse/base_scene.blend",
+  "shape_dir": "../data/objaverse/shapes",
+  "material_dir": "../data/clevr/materials",
+  "filename_prefix": "test_render",
+  "output_image_dir": "../output/images/",
+  "output_scene_dir": "../output/scenes/",
+  "output_scene_file": "../output/scenes.json",
+  "masks_dir": "../output/masks/",
+  "enhanced_image_dir": "../output/enhanced_images/",
+  "license": "Creative Commons Attribution (CC-BY 4.0)",
+  "use_gpu": true,
+  "width": 512,
+  "height": 512,
+  "render_tile_size": 256
+}
