@@ -9,8 +9,8 @@
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/compling-wat/scripted-renderer-dev.git
-cd scripted-renderer-dev
+git clone https://github.com/compling-wat/FORG3D-object-data.git
+cd FORG3D
 ```
 
 ### Step 2: Install Blender 4.3
@@ -27,9 +27,9 @@ Download and install **[Blender 4.3](https://www.blender.org/download/)**.
     ```bash
    cd /path/to/blender/site-packages/
    ```
-3. Create a `.pth` file named `scripted-renderer-dev.pth` and add the absolute path to the `src` directory of the cloned repository:
+3. Create a `.pth` file named `FORG3D.pth` and add the absolute path to the `src` directory of the cloned repository:
    ```bash
-   echo "/path/to/scripted-renderer-dev/src" > /path/to/blender/site-packages/scripted-renderer-dev.pth
+   echo "/path/to/FORG3D/src" > /path/to/blender/site-packages/FORG3D.pth
    ```
     - _Note: if you encounter errors on Windows, ensure the file encoding is **UTF-8 with BOM**._
   
