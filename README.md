@@ -9,7 +9,7 @@
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/compling-wat/FORG3D-object-data.git
+git clone https://github.com/compling-wat/FORG3D.git
 cd FORG3D
 ```
 
