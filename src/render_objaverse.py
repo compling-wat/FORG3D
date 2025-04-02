@@ -52,9 +52,9 @@ def check_overlap(obj1: bpy.types.Object, obj2: bpy.types.Object, camera: bpy.ty
 
     Returns:
         True if the two objects overlap, False otherwise.
-        Note: "Overlap" is defined as follows:
-              - If the smaller object is behind the bigger one and the intersecting pixels exceed 75% of the smaller object's pixels.
-              - If the objects are side by side and there are any shared pixels between the objects. 
+        "Overlap" is defined as follows:
+        (1) If the smaller object is behind the bigger one and the intersecting pixels exceed 75% of the smaller object's pixels.
+        (2) If the objects are side by side and there are any shared pixels between the objects. 
         This function is used to skip scenes where one object is blocked by the other or if they are too close to each other.
     """
     # Get all meshes in the scene

@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath('../src'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Scripted Renderer'
+project = 'FORG3D'
 copyright = '2025, Oscar Pang'
 author = 'Oscar Pang'
 release = '1.0'

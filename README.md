@@ -102,7 +102,7 @@ _This script is useful for **testing and fine-tuning** object placements before 
 
 ### **Adding AI-generated Backgrounds (EXTRA)**
 
-All the images rendered are just 2 objects on a white surface with a light grey "sky". If you would like to add a custom (more realistic) background to each image in your image output folder, you can navigate to the `generate_backgrounds.sh` script. Note: this feature is still under experimentation.
+All the images rendered are just 2 objects on a white surface with a light grey "sky". If you would like to add a custom (more realistic) background to each image in your image output folder, you can navigate to the `generate_backgrounds.sh` script.
 
 - Here, you can customize the `PROMPT` argument to guide the background generation process.
 
