@@ -1,7 +1,7 @@
 """Generate AI-enhanced images for each image in the output directory."""
 import torch
 from diffusers import AutoPipelineForInpainting
-from PIL import Image
+from PIL import Image, ImageFilter
 import os
 import json
 import sys
@@ -30,6 +30,7 @@ def generate_background(image_file: str,
                     mask_file: str, 
                     output_path: str, 
                     prompt: str, 
+                    negative_prompt: str,
                     device: str, 
                     pipe: AutoPipelineForInpainting) -> None:
     """ Generate and save an enhanced image using a diffusion model for a given image and mask.
@@ -45,12 +46,14 @@ def generate_background(image_file: str,
     # Open both image and mask
     image = Image.open(image_file).convert("RGB")
     mask = Image.open(mask_file).convert("L")
+    mask = mask.filter(ImageFilter.GaussianBlur(radius=2))
     mask = mask.point(lambda x: 0 if x < 254 else 255)
     # Use a generator
     generator = torch.Generator(device=device).manual_seed(42)
     # Perform inpainting
     output_image = pipe(
         prompt=prompt,
+        negative_prompt=negative_prompt,
         image=image,
         mask_image=mask,
         guidance_scale=5,
@@ -61,7 +64,7 @@ def generate_background(image_file: str,
     filename = os.path.basename(image_file)
     output_image.save(os.path.join(output_path, filename))
 
-def main(prompt: str, device: str) -> None:
+def main(prompt: str, negative_prompt: str, device: str) -> None:
     """Generate enhanced images for each image in the output directory.
     
     Args: 
@@ -86,7 +89,7 @@ def main(prompt: str, device: str) -> None:
             enhanced_path_dir = os.path.join(enhanced_image_dir, relative_path)
             if not os.path.exists(enhanced_path_dir):
                 os.makedirs(enhanced_path_dir)
-            generate_background(image_file, mask_file, enhanced_path_dir, prompt, device, pipe)
+            generate_background(image_file, mask_file, enhanced_path_dir, prompt, negative_prompt, device, pipe)
 
 if __name__ == '__main__':
     # Check if CUDA is available
@@ -96,6 +99,7 @@ if __name__ == '__main__':
         print("CUDA is not available. Using CPU.")
         device = "cpu"
     # Extract prompt
-    prompt = sys.argv[-1] 
-    main(prompt, device)
+    prompt = sys.argv[-2] 
+    negative_prrompt = sys.argv[-1]
+    main(prompt, negative_prrompt, device)
     

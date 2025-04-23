@@ -104,7 +104,9 @@ _This script is useful for **testing and fine-tuning** object placements before 
 
 All the images rendered are just 2 objects on a white surface with a light grey "sky". If you would like to add a custom (more realistic) background to each image in your image output folder, you can navigate to the `generate_backgrounds.sh` script.
 
-- Here, you can customize the `PROMPT` argument to guide the background generation process.
+- Here, you can customize the `PROMPT` (what you want the scene to include) and `NEGATIVE_PROMPT` (what you want to avoid in the scene) arguments to guide the background generation process. 
+
+- Make sure to provide a valid Hugging Face token in the `HF_TOKEN` field to authenticate and access the model.
 
 - The process utilizes the [**Stable Diffusion XL inpainting model**](https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1) to modify specific regions of images with custom backgrounds.
 

@@ -159,7 +159,7 @@ Adding AI-generated Backgrounds (Experimental)
 
 To enhance image realism, use ``generate_backgrounds.sh`` to add AI-generated backgrounds via the Stable Diffusion XL inpainting model:
 
-Customize the background generation with the ``PROMPT`` variable.
+Customize the background generation with the ``PROMPT`` (what you want the scene to include) and ``NEGATIVE_PROMPT`` (what you want to avoid in the scene) variables.
 
 .. tip::
    
