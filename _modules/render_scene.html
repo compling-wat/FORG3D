@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>render_scene &#8212; FORG3D 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=a681ed88"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/render_scene';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FORG3D 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">src</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../download.html">download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../render_objaverse.html">render_objaverse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../render_scene.html">render_scene module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html">utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generate_background.html">generate_background module</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for render_scene</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Render scenes with Blender.&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Mapping</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">render_objaverse</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_scene_3drf</span>
+
+<span class="n">INSIDE_BLENDER</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">bpy</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">mathutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;WARNING: Not running inside Blender.</span>
+<span class="s1">          Some functionality may not be available.&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="n">INSIDE_BLENDER</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">if</span> <span class="n">INSIDE_BLENDER</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">utils</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&#39;&#39;&#39;ERROR: Running render_images.py from Blender and cannot import utils.py.</span>
+<span class="sd">            You may need to add a .pth file to the site-packages of Blender&#39;s bundled python with a command like this:</span>
+<span class="sd">            echo $PWD &gt;&gt; $BLENDER/$VERSION/python/lib/python3.5/site-packages/psy3dr.pth</span>
+<span class="sd">            Where $BLENDER is the directory where Blender is installed, and $VERSION is your Blender version (such as 2.78).&#39;&#39;&#39;</span><span class="p">,</span>
+            <span class="n">e</span>
+        <span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+
+<span class="c1"># List of directions</span>
+<span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;front&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;behind&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="parse_args">
+<a class="viewcode-back" href="../render_scene.html#render_scene.parse_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse command-line arguments.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        argv: Argument string to parse.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Parsed arguments.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="c1"># objects settings</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--objects&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;List of object names to render. If not specified, all available objects will be used.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--render-random&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;If set, render scenes with random rotations and positions.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--max-images&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Maximum number of images to render for each object pair and direction.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--distance-between-objects&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> 
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Distance between objects (in meters) between the objects centers.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--object1-rotation&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Rotation angle (in degrees) for the first object in the scene.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--object2-rotation&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Rotation angle (in degrees) for the second object in the scene.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--direction&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;front&#39;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;behind&#39;</span><span class="p">,</span> <span class="s1">&#39;front&#39;</span><span class="p">],</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Relative direction of the second object with respect to the first object.&#39;</span><span class="p">)</span>
+    <span class="c1"># camera settings</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--max-camera-configs&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Maximum number of camera configurations to render.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--camera-tilt&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Tilt (vertical) angle (in degrees) for the camera.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--camera-pan&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Pan (horizontal) angle (in degrees) for the camera.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--camera-height&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Height (in meters) of the camera in the scene.&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--camera-focal-length&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Focal length (in millimeters) of the camera lens.&#39;</span><span class="p">)</span>
+    <span class="c1"># return parsed arguments</span>
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="generate_camera_configs">
+<a class="viewcode-back" href="../render_scene.html#render_scene.generate_camera_configs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_camera_configs</span><span class="p">(</span><span class="n">max_configs</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a list of camera configurations.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        args: Parsed arguments.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of dictionaries with camera configurations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">camera_configs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tilt</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">pan</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">50</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">height</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">focal_length</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">]:</span>
+                    <span class="n">camera_configs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;tilt&#39;</span><span class="p">:</span> <span class="n">tilt</span><span class="p">,</span>
+                        <span class="s1">&#39;pan&#39;</span><span class="p">:</span> <span class="n">pan</span><span class="p">,</span>
+                        <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">height</span><span class="p">,</span>
+                        <span class="s1">&#39;focal_length&#39;</span><span class="p">:</span> <span class="n">focal_length</span>
+                    <span class="p">})</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">camera_configs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">camera_configs</span><span class="p">[:</span><span class="n">max_configs</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="candidate_objects_with_rotations">
+<a class="viewcode-back" href="../render_scene.html#render_scene.candidate_objects_with_rotations">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">candidate_objects_with_rotations</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate candidate objects with rotations.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        obj: Object to generate candidates for.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of object configurations with rotations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">default_orientation</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;default_orientation&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">default_orientation</span><span class="p">:</span>
+        <span class="n">ret_objs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">rotate_direction</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]):</span>
+            <span class="n">ret_obj</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+            <span class="n">ret_obj</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotate_direction</span>
+            <span class="n">ret_obj</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">directions</span><span class="p">[(</span><span class="n">directions</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">default_orientation</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">]</span>
+            <span class="n">ret_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret_obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret_objs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ret_obj</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">ret_obj</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">ret_obj</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">ret_obj</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="render_random_scenes">
+<a class="viewcode-back" href="../render_scene.html#render_scene.render_random_scenes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">render_random_scenes</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span> 
+                        <span class="n">obj_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> 
+                        <span class="n">properties</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> 
+                        <span class="n">camera_configs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> 
+                        <span class="n">config</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> 
+                        <span class="n">max_images</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+                        <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renders a variety of random scenes given objects and saving the scenes to files.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        args: Parsed arguments.</span>
+<span class="sd">        obj_names: List of object names to be used in the scenes.</span>
+<span class="sd">        properties: Dictionary mapping object names to their properties.</span>
+<span class="sd">        camera_configs: List of camera configurations to render.</span>
+<span class="sd">        config: Config file for the scenes.</span>
+<span class="sd">        img_template: Template string for image file paths.</span>
+<span class="sd">        scene_template: Template string for scene file paths.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Generate all possible combinations of objects</span>
+    <span class="n">object_combinations</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">obj_i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">obj_names</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">obj_j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">obj_names</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+                <span class="n">obj_i_with_rotation</span> <span class="o">=</span> <span class="n">candidate_objects_with_rotations</span><span class="p">(</span><span class="n">properties</span><span class="p">[</span><span class="n">obj_i</span><span class="p">])</span>
+                <span class="n">obj_j_with_rotation</span> <span class="o">=</span> <span class="n">candidate_objects_with_rotations</span><span class="p">(</span><span class="n">properties</span><span class="p">[</span><span class="n">obj_j</span><span class="p">])</span> 
+                <span class="n">scene_combinations</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="c1"># Create a shuffled list of direction combinations</span>
+                <span class="k">for</span> <span class="n">direction</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">obj_i_r</span> <span class="ow">in</span> <span class="n">obj_i_with_rotation</span><span class="p">:</span>
+                        <span class="k">for</span> <span class="n">obj_j_r</span> <span class="ow">in</span> <span class="n">obj_j_with_rotation</span><span class="p">:</span>
+                            <span class="n">scene_combinations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">obj_i_r</span><span class="p">,</span> <span class="n">obj_j_r</span><span class="p">,</span> <span class="n">direction</span><span class="p">))</span>
+                <span class="n">scenes_by_directions</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">for</span> <span class="n">scene</span> <span class="ow">in</span> <span class="n">scene_combinations</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">scene</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">scenes_by_directions</span><span class="p">:</span>
+                        <span class="n">scenes_by_directions</span><span class="p">[</span><span class="n">scene</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">scenes_by_directions</span><span class="p">[</span><span class="n">scene</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span> <span class="o">&lt;</span> <span class="n">max_images</span><span class="p">:</span>
+                        <span class="n">scenes_by_directions</span><span class="p">[</span><span class="n">scene</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
+                <span class="n">filtered_scenes</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">direction</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">scene</span> <span class="ow">in</span> <span class="n">scenes_by_directions</span><span class="p">[</span><span class="n">direction</span><span class="p">]:</span>
+                        <span class="k">for</span> <span class="n">camera_config</span> <span class="ow">in</span> <span class="n">camera_configs</span><span class="p">:</span>
+                            <span class="n">filtered_scenes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="o">*</span><span class="n">scene</span><span class="p">,</span> <span class="n">camera_config</span><span class="p">))</span>
+                <span class="n">object_combinations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">obj_i</span><span class="p">,</span> <span class="n">obj_j</span><span class="p">,</span> <span class="n">filtered_scenes</span><span class="p">))</span>
+    <span class="c1"># Render scenes for each combination</span>
+    <span class="n">image_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">obj_i</span><span class="p">,</span> <span class="n">obj_j</span><span class="p">,</span> <span class="n">scene_combinations</span> <span class="ow">in</span> <span class="n">object_combinations</span><span class="p">:</span>
+        <span class="c1"># Create a top-level directory for this object pair</span>
+        <span class="n">overall_combination_prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj_i</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">obj_j</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">overall_combination_images</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">],</span> <span class="n">overall_combination_prefix</span><span class="p">)</span>
+        <span class="n">overall_combination_scenes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">],</span> <span class="n">overall_combination_prefix</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">overall_combination_images</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">overall_combination_images</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">overall_combination_scenes</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">overall_combination_scenes</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">obj_i_r</span><span class="p">,</span> <span class="n">obj_j_r</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">camera_config</span> <span class="ow">in</span> <span class="n">scene_combinations</span><span class="p">:</span>
+            <span class="c1"># Create a subdirectory for each direction inside the main combination directory</span>
+            <span class="n">direction_dir_images</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">overall_combination_images</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj_i</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">obj_j</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">direction_dir_scenes</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">overall_combination_scenes</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj_i</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">obj_j</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">direction_dir_images</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">direction_dir_images</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">direction_dir_scenes</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">direction_dir_scenes</span><span class="p">)</span>
+            <span class="n">img_template_comb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">direction_dir_images</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%06d</span><span class="s1">.png&#39;</span><span class="p">)</span>
+            <span class="n">scene_template_comb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">direction_dir_scenes</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%06d</span><span class="s1">.json&#39;</span><span class="p">)</span>
+            <span class="n">img_path</span> <span class="o">=</span> <span class="n">img_template_comb</span> <span class="o">%</span> <span class="n">image_count</span>
+            <span class="n">scene_path</span> <span class="o">=</span> <span class="n">scene_template_comb</span> <span class="o">%</span> <span class="n">image_count</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj_i_r</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">obj_j_r</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># Generate a random camera setting for each image</span>
+            <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">args</span><span class="o">.</span><span class="n">camera_tilt</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_pan</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_height</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_focal_length</span><span class="p">]):</span>
+                <span class="n">camera_settings</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;tilt&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_tilt</span><span class="p">,</span>
+                    <span class="s1">&#39;pan&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_pan</span><span class="p">,</span>
+                    <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_height</span><span class="p">,</span>
+                    <span class="s1">&#39;focal_length&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_focal_length</span>
+                <span class="p">}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">camera_settings</span> <span class="o">=</span> <span class="n">camera_config</span>
+            <span class="n">render_scene_3drf</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">camera_settings</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">image_count</span><span class="p">,</span> <span class="n">img_path</span><span class="p">,</span> <span class="n">scene_path</span><span class="p">,</span> <span class="p">(</span><span class="n">obj_i_r</span><span class="p">,</span> <span class="n">obj_j_r</span><span class="p">),</span> <span class="n">direction</span><span class="p">)</span>
+            <span class="n">image_count</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../render_scene.html#render_scene.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Render scenes based on the provided arguments and configurations.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        args: Command-line arguments for rendering scenes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># load the config file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DIR</span><span class="p">,</span> <span class="s1">&#39;config.json&#39;</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;filename_prefix&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span>
+    <span class="n">img_template</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%06d</span><span class="s1">.png&#39;</span>
+    <span class="n">scene_template</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%06d</span><span class="s1">.json&#39;</span>
+    <span class="n">img_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">],</span> <span class="n">img_template</span><span class="p">)</span>
+    <span class="n">scene_template</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">],</span> <span class="n">scene_template</span><span class="p">)</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DIR</span><span class="p">,</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">]))</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DIR</span><span class="p">,</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">]))</span>
+    <span class="n">config</span><span class="p">[</span><span class="s1">&#39;masks_dir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DIR</span><span class="p">,</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;masks_dir&#39;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;masks_dir&#39;</span><span class="p">]):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;masks_dir&#39;</span><span class="p">])</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;properties_json&#39;</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">objects</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">obj_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">properties</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">obj_names</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">objects</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">render_random</span><span class="p">:</span>
+        <span class="n">camera_configs</span> <span class="o">=</span> <span class="n">generate_camera_configs</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">max_camera_configs</span><span class="p">)</span>
+        <span class="n">render_random_scenes</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">obj_names</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="n">camera_configs</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">max_images</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">img_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_image_dir&#39;</span><span class="p">],</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+        <span class="n">scene_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;output_scene_dir&#39;</span><span class="p">],</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span><span class="p">)</span>
+        <span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;front&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;behind&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj_names</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="n">ground_name</span><span class="p">,</span> <span class="n">figure_name</span> <span class="o">=</span> <span class="n">obj_names</span>
+        <span class="n">ground</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="n">ground_name</span><span class="p">]</span>
+        <span class="n">figure</span> <span class="o">=</span> <span class="n">properties</span><span class="p">[</span><span class="n">figure_name</span><span class="p">]</span>
+        <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">object1_rotation</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">object1_rotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">object2_rotation</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">object2_rotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;default_orientation&#39;</span><span class="p">]:</span>
+            <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">directions</span><span class="p">[(</span><span class="n">directions</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">properties</span><span class="p">[</span><span class="n">ground_name</span><span class="p">][</span><span class="s1">&#39;default_orientation&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="nb">round</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">object1_rotation</span> <span class="o">/</span> <span class="mi">90</span><span class="p">))</span> <span class="o">%</span> <span class="mi">4</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;default_orientation&#39;</span><span class="p">]:</span>
+            <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">directions</span><span class="p">[(</span><span class="n">directions</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">properties</span><span class="p">[</span><span class="n">figure_name</span><span class="p">][</span><span class="s1">&#39;default_orientation&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="nb">round</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">object2_rotation</span> <span class="o">/</span> <span class="mi">90</span><span class="p">))</span> <span class="o">%</span> <span class="mi">4</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">direction</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">direction</span>
+        <span class="n">camera_settings</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;tilt&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_tilt</span><span class="p">,</span>
+            <span class="s1">&#39;pan&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_pan</span><span class="p">,</span>
+            <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_height</span><span class="p">,</span>
+            <span class="s1">&#39;focal_length&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">camera_focal_length</span>
+        <span class="p">}</span>
+        <span class="n">render_scene_3drf</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">camera_settings</span><span class="p">,</span> <span class="n">properties</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">img_path</span><span class="p">,</span> <span class="n">scene_path</span><span class="p">,</span> <span class="p">(</span><span class="n">ground</span><span class="p">,</span> <span class="n">figure</span><span class="p">),</span> <span class="n">direction</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">INSIDE_BLENDER</span><span class="p">:</span>
+        <span class="c1"># Run normally</span>
+        <span class="n">argv</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">extract_args</span><span class="p">()</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+        <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="s1">&#39;--help&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="ow">or</span> <span class="s1">&#39;-h&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+        <span class="n">parse_args</span><span class="p">(</span><span class="s1">&#39;--help&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&#39;&#39;&#39;ERROR: This script is intended to be run from Blender like this:</span>
+<span class="sd">            blender --background --python render_scene.py -- [args]</span>
+<span class="sd">            You can also run as a standalone python script to view all arguments like this:</span>
+<span class="sd">            python render_scene.py --help&#39;&#39;&#39;</span>
+        <span class="p">)</span>
+        
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oscar Pang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Oscar Pang.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

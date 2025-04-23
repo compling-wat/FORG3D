@@ -1,0 +1,593 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FORG3D Rendering Tool Documentation &#8212; FORG3D 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="src" href="modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FORG3D 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">src</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html">download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="render_objaverse.html">render_objaverse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="render_scene.html">render_scene module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_background.html">generate_background module</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FORG3D Rendering Tool Documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">Clone the Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-blender-4-3">Install Blender 4.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-environment">Set Up the Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-preset-objects">Load Preset Objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-settings">Camera Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-multiple-images">Rendering Multiple Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-a-single-image">Rendering a Single Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-ai-generated-backgrounds-experimental">Adding AI-generated Backgrounds (Experimental)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="forg3d-rendering-tool-documentation">
+<h1>FORG3D Rendering Tool Documentation<a class="headerlink" href="#forg3d-rendering-tool-documentation" title="Link to this heading">#</a></h1>
+<p>Welcome to the <strong>FORG3D</strong> (Flexible Object Rendering for Generation of 3D Vision-Language Spatial Reasoning Datasets) documentation.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">src</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html">download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="render_objaverse.html">render_objaverse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="render_scene.html">render_scene module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generate_background.html">generate_background module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>FORG3D is a 3D rendering tool that places two Blender objects in a customizable scene, allowing control over object positions, orientations, and camera configurations. It supports both single and batch image generation for research in spatial reasoning and AI vision tasks.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here is an example rendered scene, and the same scene with different camera configurations, different object rotations, and different relative positions:</p>
+</div>
+<div style="display: flex; justify-content: center; gap: 2%; flex-wrap: wrap;">
+  <img src="_static/4.png" style="width: 22%;">
+  <img src="_static/2.png" style="width: 22%;">
+  <img src="_static/3.png" style="width: 22%;">
+  <img src="_static/6.png" style="width: 22%;">
+</div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here are some examples rendered scenes with various objects of various size groups:</p>
+</div>
+<div style="display: flex; justify-content: center; gap: 2%; flex-wrap: wrap;">
+  <img src="_static/1.png" style="width: 22%;">
+  <img src="_static/8.png" style="width: 22%;">
+  <img src="_static/9.png" style="width: 22%;">
+  <img src="_static/10.png" style="width: 22%;">
+</div></section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<section id="clone-the-repository">
+<h3>Clone the Repository<a class="headerlink" href="#clone-the-repository" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/compling-wat/FORG3D.git
+<span class="nb">cd</span><span class="w"> </span>FORG3D
+</pre></div>
+</div>
+</section>
+<section id="install-blender-4-3">
+<h3>Install Blender 4.3<a class="headerlink" href="#install-blender-4-3" title="Link to this heading">#</a></h3>
+<p>Download and install <a class="reference external" href="https://www.blender.org/download/">Blender 4.3</a> for your system.</p>
+</section>
+<section id="set-up-the-environment">
+<h3>Set Up the Environment<a class="headerlink" href="#set-up-the-environment" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Locate your Blender installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>blender<span class="w">   </span><span class="c1"># or &#39;where blender&#39; on Windows</span>
+</pre></div>
+</div>
+</li>
+<li><p>Navigate into Blender’s site-packages directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/blender/site-packages/
+</pre></div>
+</div>
+</li>
+<li><p>Create a <cite>.pth</cite> file named <code class="docutils literal notranslate"><span class="pre">FORG3D.pth</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;/path/to/FORG3D/src&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/path/to/blender/site-packages/FORG3D.pth
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, ensure the file is saved with <strong>UTF-8 with BOM</strong> encoding.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="load-preset-objects">
+<h3>Load Preset Objects<a class="headerlink" href="#load-preset-objects" title="Link to this heading">#</a></h3>
+<p>Use the provided script to download and load 21 preset objects:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>data
+./load_objects.sh
+</pre></div>
+</div>
+<p>To add your own objects, place <cite>.blend</cite> files in <code class="docutils literal notranslate"><span class="pre">data/objaverse/shapes/</span></code> and register them in <code class="docutils literal notranslate"><span class="pre">properties.json</span></code>.</p>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<p>Scripts are located in the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> folder. First navigate there:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>scripts
+</pre></div>
+</div>
+<section id="camera-settings">
+<h3>Camera Settings<a class="headerlink" href="#camera-settings" title="Link to this heading">#</a></h3>
+<p>You can set specific camera parameters in the rendering script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--camera-tilt<span class="w"> </span>X<span class="w">                </span><span class="c1"># Tilt angle in degrees</span>
+--camera-pan<span class="w"> </span>X<span class="w">                 </span><span class="c1"># Pan angle in degrees</span>
+--camera-height<span class="w"> </span>X<span class="w">              </span><span class="c1"># Camera height in meters</span>
+--camera-focal-length<span class="w"> </span>X<span class="w">        </span><span class="c1"># Focal length in mm</span>
+</pre></div>
+</div>
+</section>
+<section id="rendering-multiple-images">
+<h3>Rendering Multiple Images<a class="headerlink" href="#rendering-multiple-images" title="Link to this heading">#</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">--render-random</span></code> to generate multiple image combinations.</p>
+<p>Each pair of objects will be rendered with the following directional subdirectories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[object1]_[object2]_left</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[object1]_[object2]_right</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[object1]_[object2]_front</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[object1]_[object2]_behind</span></code></p></li>
+</ul>
+<p>Each image has an associated JSON metadata file describing camera settings and object configuration.</p>
+<p>Additional flags:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--objects<span class="w"> </span><span class="o">[</span>list<span class="o">]</span><span class="w">               </span><span class="c1"># Specific objects to use</span>
+--distance-between-objects<span class="w"> </span>X<span class="w">  </span><span class="c1"># Distance in meters (default: 3)</span>
+--max-images<span class="w"> </span>N<span class="w">                </span><span class="c1"># Max images per subdirectory</span>
+--max-camera-configs<span class="w"> </span>N<span class="w">        </span><span class="c1"># Max camera configurations per image</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">--objects</span></code> is not specified, all objects in <code class="docutils literal notranslate"><span class="pre">data/</span></code> are used.
+If <code class="docutils literal notranslate"><span class="pre">--max-camera-configs</span></code> is not specified, a fixed camera config is required.</p>
+</div>
+</section>
+<section id="rendering-a-single-image">
+<h3>Rendering a Single Image<a class="headerlink" href="#rendering-a-single-image" title="Link to this heading">#</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">render_single.sh</span></code> for generating a controlled single image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--direction<span class="w"> </span><span class="o">[</span>left<span class="p">|</span>right<span class="p">|</span>behind<span class="p">|</span>front<span class="o">]</span><span class="w">   </span><span class="c1"># Position of object 2 relative to object 1</span>
+--object1-rotation<span class="w"> </span>X<span class="w">                    </span><span class="c1"># Rotation of object 1 (degrees clockwise)</span>
+--object2-rotation<span class="w"> </span>X<span class="w">                    </span><span class="c1"># Rotation of object 2 (degrees clockwise)</span>
+</pre></div>
+</div>
+<p>Camera settings and <code class="docutils literal notranslate"><span class="pre">--direction</span></code> must be provided.</p>
+<p>This is ideal for debugging placements and testing scene composition.</p>
+</section>
+<section id="adding-ai-generated-backgrounds-experimental">
+<h3>Adding AI-generated Backgrounds (Experimental)<a class="headerlink" href="#adding-ai-generated-backgrounds-experimental" title="Link to this heading">#</a></h3>
+<p>To enhance image realism, use <code class="docutils literal notranslate"><span class="pre">generate_backgrounds.sh</span></code> to add AI-generated backgrounds via the Stable Diffusion XL inpainting model:</p>
+<p>Customize the background generation with the <code class="docutils literal notranslate"><span class="pre">PROMPT</span></code> (what you want the scene to include) and <code class="docutils literal notranslate"><span class="pre">NEGATIVE_PROMPT</span></code> (what you want to avoid in the scene) variables.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here is an example of applying AI-generated backgrounds to a rendered scene:</p>
+</div>
+<div style="display: flex; justify-content: center; gap: 4%; flex-wrap: wrap;">
+  <img src="_static/5.png" style="width: 22%;">
+  <img src="_static/7.png" style="width: 22%;">
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature is experimental and intended for testing dataset robustness to background variation.</p>
+</div>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h2>
+<p>General parameters such as output directories, resolution, and scene options are configured in <code class="docutils literal notranslate"><span class="pre">src/config.json</span></code>.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>This project is licensed under the MIT License.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">src</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository">Clone the Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-blender-4-3">Install Blender 4.3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-environment">Set Up the Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-preset-objects">Load Preset Objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-settings">Camera Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-multiple-images">Rendering Multiple Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-a-single-image">Rendering a Single Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-ai-generated-backgrounds-experimental">Adding AI-generated Backgrounds (Experimental)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oscar Pang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Oscar Pang.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
