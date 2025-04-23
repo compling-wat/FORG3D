@@ -4,6 +4,8 @@
 
 ## Setup
 
+**Recommended Python Version:** [3.11.9](https://www.python.org/downloads/release/python-3119/)
+
 ### Step 1: Clone the Repository
 
 Clone this repository to your local machine:
