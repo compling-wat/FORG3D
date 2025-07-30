@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to Blender executable (required)
-BLENDER_EXECUTABLE=""
+BLENDER_EXECUTABLE="YOUR_BLENDER_EXECUTABLE"
 
 PYTHON_SCRIPT="../src/render_scene.py"
 
@@ -17,6 +17,7 @@ ARGS="
     --camera-pan 45 \
     --camera-height 1.5 \
     --camera-focal-length 60 \
+    --filename-prefix test_render \
 "
 
 "$BLENDER_EXECUTABLE" --background --python "$PYTHON_SCRIPT" -- $ARGS

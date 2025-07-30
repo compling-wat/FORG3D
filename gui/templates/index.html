@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blender Render Control</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="main-layout">
+            <!-- Left Column: Configuration -->
+            <div class="config-column">
+                <!-- Render Type Selector -->
+                <div class="render-selector">
+                    <div class="render-tab active" data-form="single-render-form">
+                        <div class="tab-icon">S</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Single Render</div>
+                        </div>
+                    </div>
+                    <div class="render-tab" data-form="multiple-render-form">
+                        <div class="tab-icon">M</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Multiple Renders</div>
+                        </div>
+                    </div>
+                    <div class="render-tab" data-form="background-generation-form">
+                        <div class="tab-icon">B</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Background Generation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Render Form -->
+                <form id="single-render-form" class="render-form">
+                    <div class="form-header">
+                        <h2>Single Render Configuration</h2>
+                        <p>Configure your single render parameters</p>
+                    </div>
+                    
+                    <div class="form-sections">
+                        <div class="form-section">
+                            <h3>Objects & Positioning</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="objects-single">Objects (Select exactly 2)</label>
+                                    <div class="object-selector" id="objects-single-selector">
+                                        <div class="dropdown-container">
+                                            <button type="button" class="dropdown-toggle" id="objects-single-toggle">
+                                                <span class="dropdown-text">Loading objects...</span>
+                                                <span class="dropdown-arrow">▼</span>
+                                            </button>
+                                            <div class="dropdown-menu" id="objects-single-menu">
+                                                <!-- Objects will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="selected-objects" id="objects-single-selected">
+                                        </div>
+                                    </div>
+                                    <span class="form-hint">Select exactly 2 objects for single render</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="object1-rotation">Object 1 Rotation</label>
+                                    <input type="number" id="object1-rotation" name="object1-rotation" value="180">
+                                    <span class="form-hint">Rotation in degrees (counterclockwise)</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="object2-rotation">Object 2 Rotation</label>
+                                    <input type="number" id="object2-rotation" name="object2-rotation" value="90">
+                                    <span class="form-hint">Rotation in degrees (counterclockwise)</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="distance-between-objects-single">Distance Between Objects</label>
+                                    <input type="number" id="distance-between-objects-single" name="distance-between-objects" step="0.1" value="3">
+                                    <span class="form-hint">Distance in Blender units</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="direction">Relative Position of Second Object</label>
+                                    <select id="direction" name="direction">
+                                        <option value="front">Front</option>
+                                        <option value="left" selected>Left</option>
+                                        <option value="right">Right</option>
+                                        <option value="behind">Behind</option>
+                                    </select>
+                                    <span class="form-hint">Position of second object relative to first object</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Output Settings</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="filename-prefix-single">Filename Prefix</label>
+                                    <input type="text" id="filename-prefix-single" name="filename-prefix" value="test_render" placeholder="test_render">
+                                    <span class="form-hint">Prefix for output image and scene filenames</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Camera Settings</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="camera-tilt">Camera Tilt</label>
+                                    <input type="number" id="camera-tilt" name="camera-tilt" value="90">
+                                    <span class="form-hint">Tilt angle in degrees</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="camera-pan">Camera Pan</label>
+                                    <input type="number" id="camera-pan" name="camera-pan" value="45">
+                                    <span class="form-hint">Pan angle in degrees</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="camera-height">Camera Height</label>
+                                    <input type="number" id="camera-height" name="camera-height" step="0.1" value="1.5">
+                                    <span class="form-hint">Height in Blender units</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="camera-focal-length">Camera Focal Length</label>
+                                    <input type="number" id="camera-focal-length" name="camera-focal-length" value="60">
+                                    <span class="form-hint">Focal length in mm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="single-submit-btn" class="submit-btn">
+                        <span class="btn-icon">▶</span>
+                        Run Single Render
+                    </button>
+                </form>
+
+                <!-- Multiple Render Form -->
+                <form id="multiple-render-form" class="render-form hidden">
+                    <div class="form-header">
+                        <h2>Multiple Renders Configuration</h2>
+                        <p>Configure batch rendering parameters</p>
+                    </div>
+                    
+                    <div class="form-sections">
+                        <div class="form-section">
+                            <h3>Batch Settings</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="objects-multiple">Objects (Select multiple)</label>
+                                    <div class="object-selector" id="objects-multiple-selector">
+                                        <div class="dropdown-container">
+                                            <button type="button" class="dropdown-toggle" id="objects-multiple-toggle">
+                                                <span class="dropdown-text">Loading objects...</span>
+                                                <span class="dropdown-arrow">▼</span>
+                                            </button>
+                                            <div class="dropdown-menu" id="objects-multiple-menu">
+                                                <!-- Objects will be populated by JavaScript -->
+                                            </div>
+                                        </div>
+                                        <div class="selected-objects" id="objects-multiple-selected">
+                                        </div>
+                                    </div>
+                                    <span class="form-hint">Select multiple objects for batch rendering</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="distance-between-objects-multiple">Distance Between Objects</label>
+                                    <input type="number" id="distance-between-objects-multiple" name="distance-between-objects" step="0.1" value="3">
+                                    <span class="form-hint">Distance in Blender units</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="max-images">Max Images</label>
+                                    <input type="number" id="max-images" name="max-images" value="5">
+                                    <span class="form-hint">Maximum number of scenes to render</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="max-camera-configs">Max Camera Configs</label>
+                                    <input type="number" id="max-camera-configs" name="max-camera-configs" value="4">
+                                    <span class="form-hint">Maximum camera configurations per scene</span>
+                                </div>
+                                <div class="form-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="render-random" name="render-random" checked>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Render Random</span>
+                                    </label>
+                                    <span class="form-hint">Enable random parameter generation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Output Settings</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="filename-prefix-multiple">Filename Prefix</label>
+                                    <input type="text" id="filename-prefix-multiple" name="filename-prefix" value="test_render" placeholder="test_render">
+                                    <span class="form-hint">Prefix for output image and scene filenames</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="multiple-submit-btn" class="submit-btn">
+                        <span class="btn-icon">▶</span>
+                        Run Multiple Renders
+                    </button>
+                </form>
+
+                <!-- Background Generation Form -->
+                <form id="background-generation-form" class="render-form hidden">
+                    <div class="form-header">
+                        <h2>Background Generation Configuration</h2>
+                        <p>Generate AI-enhanced backgrounds for your renders</p>
+                    </div>
+                    
+                    <div class="form-sections">
+                        <div class="form-section">
+                            <h3>Generation Settings</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="prompt">Prompt</label>
+                                    <textarea id="prompt" name="prompt" rows="3" required></textarea>
+                                    <span class="form-hint">Describe the background you want to generate</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="negative-prompt">Negative Prompt</label>
+                                    <textarea id="negative-prompt" name="negative-prompt" rows="2"></textarea>
+                                    <span class="form-hint">Describe what you want to avoid in the background</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="device">Device</label>
+                                    <select id="device" name="device">
+                                        <option value="auto" selected>Auto</option>
+                                        <option value="cuda">CUDA (GPU)</option>
+                                        <option value="cpu">CPU</option>
+                                    </select>
+                                    <span class="form-hint">Computing device for background generation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="background-submit-btn" class="submit-btn">
+                        <span class="btn-icon">▶</span>
+                        Generate Backgrounds
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right Column: Output -->
+            <div class="output-column">
+                <div class="output-container">
+                    <div class="output-header">
+                        <h3>Terminal Output</h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <button id="stop-btn" class="stop-btn hidden">
+                                <span>⏹</span>
+                                Stop
+                            </button>
+                            <div class="output-status" id="output-status">Ready</div>
+                        </div>
+                    </div>
+                    <div class="output-content">
+                        <pre id="output">Welcome to Blender Render Control! 🎬
+
+Configure your render settings on the left and click "Run" to start rendering.
+
+The terminal output will appear here in real-time as your script executes.</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

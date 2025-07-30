@@ -49,7 +49,6 @@
   "base_scene_blendfile": "../data/objaverse/base_scene.blend",
   "shape_dir": "../data/objaverse/shapes",
   "material_dir": "../data/clevr/materials",
-  "filename_prefix": "test_render",
   "output_image_dir": "../output/images/",
   "output_scene_dir": "../output/scenes/",
   "output_scene_file": "../output/scenes.json",

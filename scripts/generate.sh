@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Huggingface token
+# Hugging Face token
 HF_TOKEN="YOUR_HF_TOKEN"
 
 # Function to activate virtual environment cross-platform
@@ -12,26 +12,25 @@ activate_venv() {
     fi
 }
 
-# Arguments for Python script (see src/generate_background.py for more details)
-# Here is an example:
-ARGS=(
-    --prompt 'realistic background and environment, very detailed and clear, no object modification' 
-    --negative_prompt 'blurry, low quality, unclear, unrealistic' 
-    --device auto
-)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+PYTHON_SCRIPT="$PROJECT_ROOT/src/generate_background.py"
 
-cd ../src
+cd "$PROJECT_ROOT/src"
+
+ARGS=("$@")
 
 if [ ! -d "venv" ]; then
+    echo "First time setup detected. This will take 5-10 minutes to download models and install dependencies..."
     python3 -m venv venv
     activate_venv
-    pip install torch --index-url https://download.pytorch.org/whl/cu121
+    pip install torch --extra-index-url https://download.pytorch.org/whl/cu121
     pip install -r requirements.txt
 else
     activate_venv
 fi
 
 huggingface-cli login --token "$HF_TOKEN"
-python generate_background.py "${ARGS[@]}"
+python "${PYTHON_SCRIPT}" "${ARGS[@]}"
 
 deactivate

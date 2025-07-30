@@ -94,8 +94,8 @@ For controlled rendering of 2 selected objects, navigate to the `render_single.s
 - Now, since you are only generating 1 image, you have the following additional customizations:
   ```bash
   --direction [left, right, behind, front]    # Set object 2’s position relative to object1
-  --object1-rotation X                        # Set object 1's rotation to X degrees clockwise (default: 0)
-  --object2-rotation X                        # Set object 2's rotation to X degrees clockwise (default: 0)
+  --object1-rotation X                        # Set object 1's rotation to X degrees counterclockwise (default: 0)
+  --object2-rotation X                        # Set object 2's rotation to X degrees counterclockwise (default: 0)
   ```
 
 - In this case, you must specify a camera setting as well as the `--direction` parameter.
@@ -112,7 +112,35 @@ All the images rendered are just 2 objects on a white surface with a light grey 
 
 - The process utilizes the [**Stable Diffusion XL inpainting model**](https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1) to modify specific regions of images with custom backgrounds.
 
-_The goal is to enable comparisons between a fine-tuned spatial reasoning model’s performance on the original dataset versus a version with more realistic backgrounds._
+_The goal is to enable comparisons between a fine-tuned spatial reasoning model's performance on the original dataset versus a version with more realistic backgrounds._
+
+## Web GUI Interface
+
+FORG3D now includes a **web-based graphical user interface (GUI)** that provides an intuitive way to configure and execute rendering tasks without using command-line scripts. The GUI offers real-time output streaming, interactive forms, and process control capabilities.
+
+### Features
+
+The web interface provides three main modes:
+
+- **Single Render**: Interactive form for rendering a single image with specific object configurations
+- **Multiple Renders**: Batch rendering interface for generating multiple image combinations  
+- **Background Generation**: AI-powered background generation using Stable Diffusion XL inpainting
+
+### Setup and Launch
+
+1. **Navigate to the GUI directory**:
+   ```bash
+   cd gui
+   ```
+
+2. **Start the web server**:
+   ```bash
+   sh start.sh
+   ```
+
+3. **Access the interface**: Open your web browser and navigate to `http://localhost:5001`
+
+_The GUI internally executes the same shell scripts (`render.sh`, `generate.sh`) as the command-line interface, providing a more accessible way to use FORG3D's capabilities._
 
 ## Configuration
 

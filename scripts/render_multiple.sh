@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to Blender executable (required)
-BLENDER_EXECUTABLE=""
+BLENDER_EXECUTABLE="YOUR_BLENDER_EXECUTABLE"
 
 PYTHON_SCRIPT="../src/render_scene.py"
 
@@ -12,6 +12,7 @@ ARGS="
     --render-random \
     --max-images 5 \
     --max-camera-configs 4 \
+    --filename-prefix test_render \
 "
 
 "$BLENDER_EXECUTABLE" --background --python "$PYTHON_SCRIPT" -- $ARGS

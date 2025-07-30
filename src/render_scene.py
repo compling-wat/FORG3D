@@ -7,6 +7,8 @@ import random
 import os
 import sys
 from typing import Any, Dict, List, Mapping
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from render_objaverse import render_scene_3drf
 
 INSIDE_BLENDER = True
@@ -70,6 +72,8 @@ def parse_args(argv: str = None) -> argparse.Namespace:
                         help='Height (in meters) of the camera in the scene.')
     parser.add_argument('--camera-focal-length', type=float, default=None,
                         help='Focal length (in millimeters) of the camera lens.')
+    parser.add_argument('--filename-prefix', type=str, default='test_render',
+                        help='Prefix for output image and scene filenames.')
     # return parsed arguments
     return parser.parse_args(argv)
 
@@ -216,14 +220,21 @@ def main(args: argparse.Namespace) -> None:
     # load the config file
     with open(os.path.join(DIR, 'config.json'), 'r') as file:
         config = json.load(file)
-    prefix = config['filename_prefix'] + '_'
+    # Resolve all relative paths in config
+    config['properties_json'] = os.path.join(DIR, config['properties_json'])
+    config['base_scene_blendfile'] = os.path.join(DIR, config['base_scene_blendfile'])
+    config['shape_dir'] = os.path.join(DIR, config['shape_dir'])
+    config['material_dir'] = os.path.join(DIR, config['material_dir'])
+    config['output_image_dir'] = os.path.join(DIR, config['output_image_dir'])
+    config['output_scene_dir'] = os.path.join(DIR, config['output_scene_dir'])
+    config['masks_dir'] = os.path.join(DIR, config['masks_dir'])
+    config['enhanced_image_dir'] = os.path.join(DIR, config['enhanced_image_dir'])
+    prefix = args.filename_prefix.replace('-', '_') + '_'
     img_template = prefix + '%06d.png'
     scene_template = prefix + '%06d.json'
     img_template = os.path.join(config['output_image_dir'], img_template)
     scene_template = os.path.join(config['output_scene_dir'], scene_template)
-    config['output_image_dir'] = os.path.abspath(os.path.join(DIR, config['output_image_dir']))
-    config['output_scene_dir'] = os.path.abspath(os.path.join(DIR, config['output_scene_dir']))
-    config['masks_dir'] = os.path.abspath(os.path.join(DIR, config['masks_dir']))
+    # Create output directories if they don't exist
     if not os.path.isdir(config['output_image_dir']):
         os.makedirs(config['output_image_dir'])
     if not os.path.isdir(config['output_scene_dir']):
