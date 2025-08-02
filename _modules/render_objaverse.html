@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>render_objaverse &#8212; FORG3D 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=a681ed88"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/render_objaverse';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FORG3D 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">src</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../download.html">download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../render_objaverse.html">render_objaverse module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../render_scene.html">render_scene module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html">utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generate_background.html">generate_background module</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for render_objaverse</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Render a scene with two objects in Blender.&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">bpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">bpy_extras</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mathutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vector</span>
+
+<div class="viewcode-block" id="extract_masks_3drf">
+<a class="viewcode-back" href="../render_objaverse.html#render_objaverse.extract_masks_3drf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_masks_3drf</span><span class="p">(</span><span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">output_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Render a masked image from the current scene and save it to disk.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        output_path: Path to save the masked image.</span>
+<span class="sd">        output_file: Output file name for the masked image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Set up compositing nodes</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">use_nodes</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">film_transparent</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">node_tree</span>
+    <span class="c1"># Clear existing nodes</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="c1"># Add required nodes</span>
+    <span class="n">render_layers</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;CompositorNodeRLayers&#39;</span><span class="p">)</span>
+    <span class="n">invert_node</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;CompositorNodeInvert&#39;</span><span class="p">)</span>
+    <span class="n">composite</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;CompositorNodeComposite&#39;</span><span class="p">)</span>
+    <span class="c1"># Exclude plane from render layer</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;MESH&#39;</span> <span class="ow">and</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Plane&#39;</span><span class="p">):</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">hide_render</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1"># Link nodes to invert alpha</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">render_layers</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;Alpha&#39;</span><span class="p">],</span> <span class="n">invert_node</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;Color&#39;</span><span class="p">])</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">invert_node</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;Color&#39;</span><span class="p">],</span> <span class="n">composite</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;Image&#39;</span><span class="p">])</span>
+    <span class="c1"># Render and save</span>
+    <span class="n">render_args</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">render</span>
+    <span class="n">render_args</span><span class="o">.</span><span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">write_still</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="check_overlap">
+<a class="viewcode-back" href="../render_objaverse.html#render_objaverse.check_overlap">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_overlap</span><span class="p">(</span><span class="n">obj1</span><span class="p">:</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">obj2</span><span class="p">:</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">camera</span><span class="p">:</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Object</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine if two objects overlap in the rendered image by analyzing their intersecting pixels.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        obj1: The first object in the scene.</span>
+<span class="sd">        obj2: The second object in the scene.</span>
+<span class="sd">        camera: The camera object used for rendering the scene.</span>
+<span class="sd">        width: The width of the rendered image in pixels.</span>
+<span class="sd">        height: The height of the rendered image in pixels.</span>
+<span class="sd">        direction: The relative direction of the second object with respect to the first object.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True if the two objects overlap, False otherwise.</span>
+<span class="sd">        &quot;Overlap&quot; is defined as follows:</span>
+<span class="sd">        (1) If the smaller object is behind the bigger one and the intersecting pixels exceed 75% of the smaller object&#39;s pixels.</span>
+<span class="sd">        (2) If the objects are side by side and there are any shared pixels between the objects. </span>
+<span class="sd">        This function is used to skip scenes where one object is blocked by the other or if they are too close to each other.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get all meshes in the scene</span>
+    <span class="n">bboxes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">obj_areas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="p">[</span><span class="n">obj1</span><span class="p">,</span> <span class="n">obj2</span><span class="p">]:</span>
+        <span class="c1"># project all bounding box corners into camera views</span>
+        <span class="n">coords_2d</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">bpy_extras</span><span class="o">.</span><span class="n">object_utils</span><span class="o">.</span><span class="n">world_to_camera_view</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="p">,</span> <span class="n">camera</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">matrix_world</span> <span class="o">@</span> <span class="n">Vector</span><span class="p">(</span><span class="n">corner</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">corner</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">bound_box</span>
+        <span class="p">]</span>
+        <span class="n">us</span> <span class="o">=</span> <span class="p">[</span><span class="n">co</span><span class="o">.</span><span class="n">x</span> <span class="k">for</span> <span class="n">co</span> <span class="ow">in</span> <span class="n">coords_2d</span><span class="p">]</span>
+        <span class="n">vs</span> <span class="o">=</span> <span class="p">[</span><span class="n">co</span><span class="o">.</span><span class="n">y</span> <span class="k">for</span> <span class="n">co</span> <span class="ow">in</span> <span class="n">coords_2d</span><span class="p">]</span>
+        <span class="n">min_u</span><span class="p">,</span> <span class="n">max_u</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">us</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">us</span><span class="p">)</span>
+        <span class="n">min_v</span><span class="p">,</span> <span class="n">max_v</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">vs</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vs</span><span class="p">)</span>
+        <span class="c1"># convert normalized coordinates into pixel coordinates</span>
+        <span class="n">x_min</span> <span class="o">=</span> <span class="n">min_u</span> <span class="o">*</span> <span class="n">width</span>
+        <span class="n">x_max</span> <span class="o">=</span> <span class="n">max_u</span> <span class="o">*</span> <span class="n">width</span>
+        <span class="n">y_min</span> <span class="o">=</span> <span class="n">min_v</span> <span class="o">*</span> <span class="n">height</span>
+        <span class="n">y_max</span> <span class="o">=</span> <span class="n">max_v</span> <span class="o">*</span> <span class="n">height</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span><span class="p">)</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span><span class="p">)</span>
+        <span class="n">bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="n">area</span><span class="p">))</span>
+        <span class="n">obj_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+    <span class="c1"># calculate the intersection area</span>
+    <span class="n">x_min1</span><span class="p">,</span> <span class="n">x_max1</span><span class="p">,</span> <span class="n">y_min1</span><span class="p">,</span> <span class="n">y_max1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_min2</span><span class="p">,</span> <span class="n">x_max2</span><span class="p">,</span> <span class="n">y_min2</span><span class="p">,</span> <span class="n">y_max2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">bboxes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">inter_x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">x_max1</span><span class="p">,</span> <span class="n">x_max2</span><span class="p">)</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="n">x_min1</span><span class="p">,</span> <span class="n">x_min2</span><span class="p">))</span>
+    <span class="n">inter_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_max1</span><span class="p">,</span> <span class="n">y_max2</span><span class="p">)</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_min1</span><span class="p">,</span> <span class="n">y_min2</span><span class="p">))</span>
+    <span class="n">intersection_area</span> <span class="o">=</span> <span class="n">inter_x</span> <span class="o">*</span> <span class="n">inter_y</span>
+    <span class="c1"># check if the intersection area is non-zero for side-by-side cases</span>
+    <span class="k">if</span> <span class="n">direction</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">intersection_area</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="c1"># check if the intersection area is larger than 75% of the smaller object for front/behind cases</span>
+    <span class="k">if</span> <span class="n">intersection_area</span> <span class="o">&gt;=</span> <span class="mf">0.75</span> <span class="o">*</span> <span class="nb">min</span><span class="p">(</span><span class="n">obj_areas</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">obj_areas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">obj_areas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;front&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">obj_areas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">obj_areas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;behind&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="add_objects_3drf">
+<a class="viewcode-back" href="../render_objaverse.html#render_objaverse.add_objects_3drf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_objects_3drf</span><span class="p">(</span><span class="n">objects</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">config</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add random objects to the current blender scene.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        objects: Objects to add to the scene.</span>
+<span class="sd">        config: Config file for the scene.</span>
+<span class="sd">        properties: JSON data containing object properties.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># only support adding two objects for now</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="c1"># Scale up if objects are small or medium</span>
+    <span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">if</span> <span class="n">properties</span><span class="p">[</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;small&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">properties</span><span class="p">[</span><span class="n">objects</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;small&#39;</span><span class="p">:</span>
+            <span class="n">scale_factor</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">elif</span> <span class="n">properties</span><span class="p">[</span><span class="n">objects</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;medium&#39;</span><span class="p">:</span>
+            <span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">1.8</span>
+    <span class="k">elif</span> <span class="n">properties</span><span class="p">[</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;medium&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">properties</span><span class="p">[</span><span class="n">objects</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;small&#39;</span><span class="p">:</span>
+            <span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">1.8</span>
+        <span class="k">elif</span> <span class="n">properties</span><span class="p">[</span><span class="n">objects</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;group&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;medium&#39;</span><span class="p">:</span>
+            <span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">1.3</span>
+    <span class="c1"># Load the objects</span>
+    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
+        <span class="n">object_name</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="n">object_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;shape_dir&#39;</span><span class="p">],</span> <span class="n">properties</span><span class="p">[</span><span class="n">object_name</span><span class="p">][</span><span class="s1">&#39;file&#39;</span><span class="p">])</span>
+        <span class="c1"># append the object to the scene</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">wm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">object_dir</span><span class="p">,</span> <span class="s1">&#39;Object&#39;</span><span class="p">),</span> <span class="n">filename</span><span class="o">=</span><span class="n">object_name</span><span class="p">)</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">transform_apply</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># ensure the object&#39;s center of rotation is correct</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">origin_set</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ORIGIN_CENTER_OF_MASS&#39;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="s1">&#39;BOUNDS&#39;</span><span class="p">)</span>
+        <span class="c1"># select object</span>
+        <span class="n">selected_obj</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">object_name</span><span class="p">]</span>
+        <span class="c1"># Deselect all objects and select the current one</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;DESELECT&#39;</span><span class="p">)</span>
+        <span class="n">selected_obj</span><span class="o">.</span><span class="n">select_set</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">view_layer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="n">selected_obj</span>
+        <span class="c1"># set object position to the origin</span>
+        <span class="n">selected_obj</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># reshape</span>
+        <span class="n">scale</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;scale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale_factor</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">scale</span><span class="p">))</span>
+        <span class="c1"># align with base</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">corner</span> <span class="ow">in</span> <span class="n">selected_obj</span><span class="o">.</span><span class="n">bound_box</span><span class="p">:</span>
+            <span class="n">world_corner</span> <span class="o">=</span> <span class="n">selected_obj</span><span class="o">.</span><span class="n">matrix_world</span> <span class="o">@</span> <span class="n">Vector</span><span class="p">(</span><span class="n">corner</span><span class="p">)</span>
+            <span class="n">bbox</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">world_corner</span><span class="p">)</span>
+        <span class="n">min_z</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">z</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bbox</span><span class="p">)</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">min_z</span><span class="p">))</span>
+        <span class="n">selected_obj</span><span class="o">.</span><span class="n">rotation_mode</span> <span class="o">=</span> <span class="s1">&#39;XYZ&#39;</span>
+        <span class="n">selected_obj</span><span class="o">.</span><span class="n">rotation_euler</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">]]</span>
+        <span class="c1"># de-select all objects</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;DESELECT&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="render_scene_3drf">
+<a class="viewcode-back" href="../render_objaverse.html#render_objaverse.render_scene_3drf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">render_scene_3drf</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">,</span>
+                    <span class="n">config</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                    <span class="n">camera_settings</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                    <span class="n">properties</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+                    <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                    <span class="n">output_image</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">output_scene</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">objects</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
+                    <span class="n">direction</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Render a scene and save it to disk.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        args: Global parsed arguments.</span>
+<span class="sd">        config: Config file for the scene.</span>
+<span class="sd">        camera_settings: Camera settings for the scene.</span>
+<span class="sd">        properties: JSON data containing object properties.</span>
+<span class="sd">        index: Index of the scene.</span>
+<span class="sd">        output_image: Output image file path.</span>
+<span class="sd">        output_scene: Output scene file path.</span>
+<span class="sd">        objects: Configs for objects to add to the scene.</span>
+<span class="sd">        direction: Direction of the second object to the first object (in relative frame).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">intrinsic_directions</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;intrinsic_directions&#39;</span><span class="p">]</span>
+    <span class="n">caption_templates</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;caption_templates&#39;</span><span class="p">]</span>
+    <span class="c1"># load the main blendfile and materials</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">wm</span><span class="o">.</span><span class="n">open_mainfile</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;base_scene_blendfile&#39;</span><span class="p">])</span>
+    <span class="c1"># use BLENDER_RENDER to render</span>
+    <span class="n">render_args</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">render</span>
+    <span class="n">render_args</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="s1">&#39;CYCLES&#39;</span>
+    <span class="n">render_args</span><span class="o">.</span><span class="n">filepath</span> <span class="o">=</span> <span class="n">output_image</span>
+    <span class="n">render_args</span><span class="o">.</span><span class="n">resolution_x</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span>
+    <span class="n">render_args</span><span class="o">.</span><span class="n">resolution_y</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+    <span class="n">render_args</span><span class="o">.</span><span class="n">resolution_percentage</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">cycles</span><span class="o">.</span><span class="n">tile_x</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;render_tile_size&#39;</span><span class="p">]</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">cycles</span><span class="o">.</span><span class="n">tile_y</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;render_tile_size&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;use_gpu&#39;</span><span class="p">]:</span>
+        <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">cycles</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;GPU&#39;</span>
+    <span class="c1"># define scene structure</span>
+    <span class="n">scene_struct</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;image_index&#39;</span><span class="p">:</span> <span class="n">index</span><span class="p">,</span>
+        <span class="s1">&#39;image_filename&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">output_image</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1"># get ground and figure objects</span>
+    <span class="n">ground</span><span class="p">,</span> <span class="n">figure</span> <span class="o">=</span> <span class="n">objects</span>
+    <span class="c1"># put a helper plane on the ground for easier calculation of the directions</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">primitive_plane_add</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">plane</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">object</span>
+    <span class="c1"># set up camera</span>
+    <span class="n">camera</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Camera&#39;</span><span class="p">]</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">rotation_euler</span> <span class="o">=</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">camera_settings</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">camera_settings</span><span class="p">[</span><span class="s1">&#39;pan&#39;</span><span class="p">]))</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">camera_settings</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+    <span class="n">camera</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">lens</span> <span class="o">=</span> <span class="n">camera_settings</span><span class="p">[</span><span class="s1">&#39;focal_length&#39;</span><span class="p">]</span>
+    <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;camera&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">camera_settings</span>
+    <span class="c1"># calculate the directions in the scene</span>
+    <span class="n">plane_normal</span> <span class="o">=</span> <span class="n">plane</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">normal</span>
+    <span class="n">cam_behind</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">matrix_world</span><span class="o">.</span><span class="n">to_quaternion</span><span class="p">()</span> <span class="o">@</span> <span class="n">Vector</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">cam_left</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">matrix_world</span><span class="o">.</span><span class="n">to_quaternion</span><span class="p">()</span> <span class="o">@</span> <span class="n">Vector</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">plane_behind</span> <span class="o">=</span> <span class="p">(</span><span class="n">cam_behind</span> <span class="o">-</span> <span class="n">cam_behind</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">plane_normal</span><span class="p">))</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+    <span class="n">plane_left</span> <span class="o">=</span> <span class="p">(</span><span class="n">cam_left</span> <span class="o">-</span> <span class="n">cam_left</span><span class="o">.</span><span class="n">project</span><span class="p">(</span><span class="n">plane_normal</span><span class="p">))</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+    <span class="c1"># delete the helper plane</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+    <span class="c1"># All axis-aligned directions in the scene</span>
+    <span class="n">scene_directions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;behind&#39;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">plane_behind</span><span class="p">),</span>
+        <span class="s1">&#39;front&#39;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="o">-</span><span class="n">plane_behind</span><span class="p">),</span>
+        <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">plane_left</span><span class="p">),</span>
+        <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="o">-</span><span class="n">plane_left</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="c1"># Calculate positions and add objects</span>
+    <span class="n">direction_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scene_directions</span><span class="p">[</span><span class="n">direction</span><span class="p">])[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">normalized_direction</span> <span class="o">=</span> <span class="n">direction_vector</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">direction_vector</span><span class="p">)</span>
+    <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">normalized_direction</span> <span class="o">*</span> <span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">distance_between_objects</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">normalized_direction</span> <span class="o">*</span> <span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">distance_between_objects</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">add_objects_3drf</span><span class="p">(</span><span class="n">objects</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+    <span class="c1"># Set background color to light grey</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">use_nodes</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">bg_node</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">node_tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="s1">&#39;Background&#39;</span><span class="p">]</span>
+    <span class="n">bg_node</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">default_value</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># render the scene and dump the scene data structure</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">write_still</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="c1"># If overlap exists, remove the rendered image, and skip</span>
+    <span class="k">if</span> <span class="n">check_overlap</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">ground</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]],</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="n">figure</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]],</span> <span class="n">camera</span><span class="p">,</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">],</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">],</span> <span class="n">direction</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Overlap detected, skipping...</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">output_image</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="c1"># extract the masks</span>
+    <span class="n">extract_masks_3drf</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;masks_dir&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">output_image</span><span class="p">))</span>
+    <span class="c1"># save the scene data structure</span>
+    <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;ground_object&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;rotation&#39;</span><span class="p">:</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;figure_object&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;orientation&#39;</span><span class="p">:</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;rotation&#39;</span><span class="p">:</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;rotation&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;position&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="c1"># generate the captions</span>
+    <span class="n">reversed_direction</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;behind&#39;</span><span class="p">:</span> <span class="s1">&#39;front&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;front&#39;</span><span class="p">:</span> <span class="s1">&#39;behind&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;translational_relation_caption&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">caption_templates</span><span class="p">[</span><span class="s1">&#39;3d_translation&#39;</span><span class="p">][</span><span class="n">direction</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">figure</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+    <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;reflectional_relation_caption&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">caption_templates</span><span class="p">[</span><span class="s1">&#39;3d_reflection&#39;</span><span class="p">][</span><span class="n">direction</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">figure</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]:</span>
+        <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;ground_object&#39;</span><span class="p">][</span><span class="s1">&#39;intrinsic_relation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">intrinsic_directions</span><span class="p">[</span><span class="n">ground</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]][</span><span class="n">direction</span><span class="p">]</span>
+        <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;ground_object&#39;</span><span class="p">][</span><span class="s1">&#39;intrinsic_caption&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">caption_templates</span><span class="p">[</span><span class="s1">&#39;3d_intrinsic&#39;</span><span class="p">][</span><span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;ground_object&#39;</span><span class="p">][</span><span class="s1">&#39;intrinsic_relation&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ground</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">figure</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]:</span>
+        <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;figure_object&#39;</span><span class="p">][</span><span class="s1">&#39;intrinsic_relation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">intrinsic_directions</span><span class="p">[</span><span class="n">figure</span><span class="p">[</span><span class="s1">&#39;orientation&#39;</span><span class="p">]][</span><span class="n">reversed_direction</span><span class="p">[</span><span class="n">direction</span><span class="p">]]</span>
+        <span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;figure_object&#39;</span><span class="p">][</span><span class="s1">&#39;intrinsic_caption&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">caption_templates</span><span class="p">[</span><span class="s1">&#39;3d_intrinsic&#39;</span><span class="p">][</span><span class="n">scene_struct</span><span class="p">[</span><span class="s1">&#39;figure_object&#39;</span><span class="p">][</span><span class="s1">&#39;intrinsic_relation&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">figure</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">ground</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_scene</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">scene_struct</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oscar Pang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Oscar Pang.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
