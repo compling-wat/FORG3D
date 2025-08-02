@@ -1,3 +1,25 @@
+// Configuration field mapping
+const CONFIG_FIELDS = {
+    // File paths
+    'properties-json': 'properties_json',
+    'base-scene-blendfile': 'base_scene_blendfile', 
+    'output-scene-file': 'output_scene_file',
+    
+    // Directories
+    'shape-dir': 'shape_dir',
+    'material-dir': 'material_dir',
+    'output-image-dir': 'output_image_dir',
+    'output-scene-dir': 'output_scene_dir',
+    'masks-dir': 'masks_dir',
+    'enhanced-image-dir': 'enhanced_image_dir',
+    
+    // Rendering settings
+    'use-gpu': 'use_gpu',
+    'width': 'width',
+    'height': 'height',
+    'render-tile-size': 'render_tile_size'
+}
+
 // Object Selector Functionality
 let objectsData = {}
 let selectedObjects = {
@@ -22,6 +44,81 @@ async function initObjectSelectors() {
     } catch (error) {
         console.error('Error fetching objects:', error)
         showObjectLoadError()
+    }
+}
+
+// Configuration Management Functions
+async function loadConfiguration() {
+    try {
+        const response = await fetch('/api/config')
+        const data = await response.json()
+        
+        if (data.success) {
+            populateConfigurationForm(data.config)
+            appendOutput("\n✅ Configuration loaded successfully\n")
+        } else {
+            console.error('Failed to load configuration:', data.error)
+            appendOutput(`\n❌ Failed to load configuration: ${data.error}\n`)
+        }
+    } catch (error) {
+        console.error('Error fetching configuration:', error)
+        appendOutput(`\n❌ Error fetching configuration: ${error.message}\n`)
+    }
+}
+
+function populateConfigurationForm(config) {
+    // Iterate through all configured fields and populate them
+    Object.entries(CONFIG_FIELDS).forEach(([fieldId, configKey]) => {
+        const field = document.getElementById(fieldId)
+        if (field && config[configKey] !== undefined) {
+            if (field.type === 'checkbox') {
+                field.checked = config[configKey]
+            } else {
+                field.value = config[configKey]
+            }
+        }
+    })
+}
+
+async function saveConfiguration(formData) {
+    try {
+        // Convert form data to config object using the mapping
+        const configData = {}
+        
+        Object.entries(CONFIG_FIELDS).forEach(([fieldId, configKey]) => {
+            const formKey = fieldId.replace(/-/g, '_')
+            const value = formData[formKey]
+            
+            if (configKey === 'use_gpu') {
+                configData[configKey] = value === 'on'
+            } else if (value !== undefined && value !== '') {
+                if (['width', 'height', 'render_tile_size'].includes(configKey)) {
+                    configData[configKey] = parseInt(value)
+                } else {
+                    configData[configKey] = value
+                }
+            }
+        })
+        
+        const response = await fetch('/api/config', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(configData)
+        })
+        
+        const data = await response.json()
+        
+        if (data.success) {
+            appendOutput("✅ Configuration saved successfully\n")
+        } else {
+            console.error('Failed to save configuration:', data.error)
+            appendOutput(`❌ Failed to save configuration: ${data.error}\n`)
+        }
+    } catch (error) {
+        console.error('Error saving configuration:', error)
+        appendOutput(`❌ Error saving configuration: ${error.message}\n`)
     }
 }
 
@@ -224,11 +321,14 @@ const renderForms = document.querySelectorAll(".render-form")
 const singleForm = document.getElementById("single-render-form")
 const multipleForm = document.getElementById("multiple-render-form")
 const backgroundForm = document.getElementById("background-generation-form")
+const configurationForm = document.getElementById("configuration-form")
 const outputDiv = document.getElementById("output")
 const outputStatus = document.getElementById("output-status")
 const singleSubmitBtn = document.getElementById("single-submit-btn")
 const multipleSubmitBtn = document.getElementById("multiple-submit-btn")
 const backgroundSubmitBtn = document.getElementById("background-submit-btn")
+
+const saveConfigBtn = document.getElementById("save-config-btn")
 const stopBtn = document.getElementById("stop-btn")
 
 // WebSocket connection
@@ -505,6 +605,27 @@ backgroundForm.addEventListener("submit", (e) => {
   }
 })
 
+// Configuration form event listeners
+configurationForm.addEventListener("submit", async (e) => {
+  e.preventDefault()
+  
+  const submitBtn = e.target.querySelector('button[type="submit"]')
+  const originalHTML = submitBtn.innerHTML
+  
+  // Show loading state
+  submitBtn.disabled = true
+  submitBtn.innerHTML = '<span class="loading"></span>Saving configuration...'
+  
+  const formData = new FormData(e.target)
+  const data = Object.fromEntries(formData.entries())
+  
+  await saveConfiguration(data)
+  
+  // Re-enable submit button
+  submitBtn.disabled = false
+  submitBtn.innerHTML = originalHTML
+})
+
 // Add input event listeners for real-time validation feedback
 document.querySelectorAll("input, select").forEach((field) => {
   field.addEventListener("input", () => {
@@ -558,6 +679,5 @@ stopBtn.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', () => {
   initWebSocket()
   initObjectSelectors()
+  loadConfiguration()
 })
-
-console.log("🎬 Blender Render Control initialized successfully!")

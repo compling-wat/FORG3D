@@ -102,7 +102,7 @@ For controlled rendering of 2 selected objects, navigate to the `render_single.s
   
 _This script is useful for **testing and fine-tuning** object placements before batch rendering._
 
-### **Adding AI-generated Backgrounds (EXTRA)**
+### **AI-generated Backgrounds (EXPERIMENTAL)**
 
 All the images rendered are just 2 objects on a white surface with a light grey "sky". If you would like to add a custom (more realistic) background to each image in your image output folder, you can navigate to the `generate_backgrounds.sh` script.
 
@@ -114,7 +114,7 @@ All the images rendered are just 2 objects on a white surface with a light grey 
 
 _The goal is to enable comparisons between a fine-tuned spatial reasoning model's performance on the original dataset versus a version with more realistic backgrounds._
 
-## Web GUI Interface
+## Web GUI (NEW)
 
 FORG3D now includes a **web-based graphical user interface (GUI)** that provides an intuitive way to configure and execute rendering tasks without using command-line scripts. The GUI offers real-time output streaming, interactive forms, and process control capabilities.
 
@@ -125,6 +125,8 @@ The web interface provides three main modes:
 - **Single Render**: Interactive form for rendering a single image with specific object configurations
 - **Multiple Renders**: Batch rendering interface for generating multiple image combinations  
 - **Background Generation**: AI-powered background generation using Stable Diffusion XL inpainting
+
+Additionally, the GUI allows you to **configure the `config.json` settings** directly through the web interface, eliminating the need to manually edit configuration files.
 
 ### Setup and Launch
 

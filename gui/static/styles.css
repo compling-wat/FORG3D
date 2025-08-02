@@ -146,7 +146,7 @@ body {
 
 .render-selector {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: .5rem;
     margin-bottom: 1rem
 }
@@ -497,7 +497,7 @@ body {
     }
 
     .render-selector {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: .5rem
     }
 
@@ -532,8 +532,13 @@ body {
     }
 
     .main-layout {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 3fr 1fr;
         gap: .75rem
+    }
+
+    .render-selector {
+        grid-template-columns: 1fr 1fr;
+        gap: .3rem
     }
 
     .render-tab {

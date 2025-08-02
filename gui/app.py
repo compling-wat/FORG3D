@@ -16,6 +16,8 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 SCRIPTS_DIR = os.path.join(os.path.dirname(__file__), "..", "scripts")
 # Path to the data directory for properties.json
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "objaverse")
+# Path to the config.json file
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "src", "config.json")
 
 running_processes = {}
 
@@ -159,6 +161,58 @@ def get_objects():
         return jsonify({"success": False, "error": "Invalid properties file format"}), 500
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route('/api/config', methods=['GET'])
+def get_config():
+    """Get current configuration from config.json."""
+    try:
+        with open(CONFIG_PATH, 'r') as f:
+            config_data = json.load(f)
+        return jsonify({"success": True, "config": config_data})
+    except FileNotFoundError:
+        return jsonify({"success": False, "error": "Config file not found"}), 404
+    except json.JSONDecodeError:
+        return jsonify({"success": False, "error": "Invalid config file format"}), 500
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route('/api/config', methods=['POST'])
+def update_config():
+    """Update configuration in config.json."""
+    try:
+        # Get the new config data from request
+        new_config = request.get_json()
+        
+        if not new_config:
+            return jsonify({"success": False, "error": "No configuration data provided"}), 400
+        
+        # Read current config to preserve any fields not being updated
+        try:
+            with open(CONFIG_PATH, 'r') as f:
+                current_config = json.load(f)
+        except FileNotFoundError:
+            current_config = {}
+        
+        customizable_fields = [
+            'properties_json', 'base_scene_blendfile', 'shape_dir', 'material_dir',
+            'output_image_dir', 'output_scene_dir', 'output_scene_file', 'masks_dir',
+            'enhanced_image_dir', 'use_gpu', 'width', 'height', 'render_tile_size'
+        ]
+        
+        for field in customizable_fields:
+            if field in new_config:
+                current_config[field] = new_config[field]
+        
+        # Write updated config back to file
+        with open(CONFIG_PATH, 'w') as f:
+            json.dump(current_config, f, indent=2)
+        
+        return jsonify({"success": True, "message": "Configuration updated successfully"})
+        
+    except json.JSONDecodeError:
+        return jsonify({"success": False, "error": "Invalid JSON data"}), 400
+    except Exception as e:
+        return jsonify({"success": False, "error": f"Error updating config: {str(e)}"}), 500
 
 @socketio.on('connect')
 def handle_connect():

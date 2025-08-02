@@ -32,6 +32,12 @@
                             <div class="tab-title">Background Generation</div>
                         </div>
                     </div>
+                    <div class="render-tab" data-form="configuration-form">
+                        <div class="tab-icon">⚙</div>
+                        <div class="tab-content">
+                            <div class="tab-title">Configuration</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Single Render Form -->
@@ -244,6 +250,109 @@
                         <span class="btn-icon">▶</span>
                         Generate Backgrounds
                     </button>
+                </form>
+
+                <!-- Configuration Form -->
+                <form id="configuration-form" class="render-form hidden">
+                    <div class="form-header">
+                        <h2>System Configuration</h2>
+                        <p>Configure paths, directories, and rendering settings</p>
+                    </div>
+                    
+                    <div class="form-sections">
+                        <div class="form-section">
+                            <h3>File Paths</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="properties-json">Properties JSON File</label>
+                                    <input type="text" id="properties-json" name="properties_json" placeholder="../data/objaverse/properties.json">
+                                    <span class="form-hint">Path to the object properties JSON file</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="base-scene-blendfile">Base Scene Blend File</label>
+                                    <input type="text" id="base-scene-blendfile" name="base_scene_blendfile" placeholder="../data/objaverse/base_scene.blend">
+                                    <span class="form-hint">Path to the base Blender scene file</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="output-scene-file">Output Scene File</label>
+                                    <input type="text" id="output-scene-file" name="output_scene_file" placeholder="../output/scenes.json">
+                                    <span class="form-hint">Path to the output scenes JSON file</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Directories</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="shape-dir">Shapes Directory</label>
+                                    <input type="text" id="shape-dir" name="shape_dir" placeholder="../data/objaverse/shapes">
+                                    <span class="form-hint">Directory containing 3D object shapes</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="material-dir">Materials Directory</label>
+                                    <input type="text" id="material-dir" name="material_dir" placeholder="../data/clevr/materials">
+                                    <span class="form-hint">Directory containing material definitions</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="output-image-dir">Output Images Directory</label>
+                                    <input type="text" id="output-image-dir" name="output_image_dir" placeholder="../output/images/">
+                                    <span class="form-hint">Directory for rendered images</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="output-scene-dir">Output Scenes Directory</label>
+                                    <input type="text" id="output-scene-dir" name="output_scene_dir" placeholder="../output/scenes/">
+                                    <span class="form-hint">Directory for scene metadata files</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="masks-dir">Masks Directory</label>
+                                    <input type="text" id="masks-dir" name="masks_dir" placeholder="../output/masks/">
+                                    <span class="form-hint">Directory for object masks</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enhanced-image-dir">Enhanced Images Directory</label>
+                                    <input type="text" id="enhanced-image-dir" name="enhanced_image_dir" placeholder="../output/enhanced_images/">
+                                    <span class="form-hint">Directory for AI-enhanced images</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Rendering Settings</h3>
+                            <div class="form-grid">
+                                <div class="form-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="use-gpu" name="use_gpu" checked>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Use GPU for Rendering</span>
+                                    </label>
+                                    <span class="form-hint">Enable GPU acceleration for faster rendering</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="width">Image Width</label>
+                                    <input type="number" id="width" name="width" value="512" min="64" max="4096">
+                                    <span class="form-hint">Width of rendered images in pixels</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="height">Image Height</label>
+                                    <input type="number" id="height" name="height" value="512" min="64" max="4096">
+                                    <span class="form-hint">Height of rendered images in pixels</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="render-tile-size">Render Tile Size</label>
+                                    <input type="number" id="render-tile-size" name="render_tile_size" value="256" min="32" max="2048">
+                                    <span class="form-hint">Size of render tiles for memory optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" id="save-config-btn" class="submit-btn">
+                            <span class="btn-icon">💾</span>
+                            Save Configuration
+                        </button>
+                    </div>
                 </form>
             </div>
 
